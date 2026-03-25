@@ -17,7 +17,7 @@ const ManageAdmission = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admissions/all");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/admissions/all");
       setNotifications(res.data);
     } catch (err) {
       console.error(err);
@@ -43,7 +43,7 @@ const ManageAdmission = () => {
       Object.keys(form).forEach((key) => formData.append(key, form[key]));
       if (image) formData.append("image", image);
 
-      await axios.post("http://localhost:5000/api/admissions/add", formData);
+      await axios.post("https://deorajpublicschool.onrender.com/api/admissions/add", formData);
 
       setForm({ title: "", description: "", startDate: "", endDate: "" });
       setImage(null);
@@ -56,7 +56,7 @@ const ManageAdmission = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admissions/delete/${id}`);
+      await axios.delete(`https://deorajpublicschool.onrender.com/api/admissions/delete/${id}`);
       fetchData();
     } catch (err) {
       console.error(err);
@@ -158,7 +158,7 @@ const ManageAdmission = () => {
             >
               {n.image && (
                 <img
-                  src={`http://localhost:5000/uploads/${n.image}`}
+                  src={`https://deorajpublicschool.onrender.com/uploads/${n.image}`}
                   alt=""
                   className="h-40 w-full object-cover"
                 />

@@ -6,7 +6,7 @@ const Staff = () => {
   const [staffData, setStaffData] = useState([]);
 
   const fetchStaff = async () => {
-    const res = await axios.get("http://localhost:5000/api/staff");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/staff");
     setStaffData(res.data);
   };
 

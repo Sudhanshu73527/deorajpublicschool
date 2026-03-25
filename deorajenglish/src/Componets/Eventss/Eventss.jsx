@@ -11,7 +11,7 @@ const Eventss = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/events/all");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/events/all");
       setEvents(res.data);
     } catch (err) {
       console.log(err);
@@ -54,7 +54,7 @@ const Eventss = () => {
             whileHover={{ scale: 1.02 }}
           >
             <img
-              src={`http://localhost:5000/uploads/${events[0]?.image}`}
+              src={`https://deorajpublicschool.onrender.com/uploads/${events[0]?.image}`}
               className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
               alt=""
             />
@@ -82,7 +82,7 @@ const Eventss = () => {
               transition={{ delay: index * 0.1 }}
             >
               <img
-                src={`http://localhost:5000/uploads/${ev.image}`}
+                src={`https://deorajpublicschool.onrender.com/uploads/${ev.image}`}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-110"
                 alt=""
               />

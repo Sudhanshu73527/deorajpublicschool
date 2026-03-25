@@ -8,7 +8,7 @@ const Admissionnoti = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:5000/api/admissions/all");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/admissions/all");
       setNotifications(res.data);
     };
     fetchData();
@@ -25,7 +25,7 @@ const Admissionnoti = () => {
 
           {/* LEFT IMAGE */}
           <motion.div initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="relative">
-            <img src={n.image ? `http://localhost:5000/uploads/${n.image}` : "/dev1.png"} alt="admission" className="rounded-3xl shadow-2xl w-full h-[400px] object-cover" />
+            <img src={n.image ? `https://deorajpublicschool.onrender.com/uploads/${n.image}` : "/dev1.png"} alt="admission" className="rounded-3xl shadow-2xl w-full h-[400px] object-cover" />
             <div className="absolute top-6 left-6 bg-green-600 text-white px-5 py-2 rounded-full text-sm shadow-lg">Admissions Open</div>
           </motion.div>
 

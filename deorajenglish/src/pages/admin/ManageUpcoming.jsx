@@ -17,7 +17,7 @@ const ManageUpcoming = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/upcoming/all");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/upcoming/all");
       setEvents(res.data);
     } catch {
       toast.error("Failed to load ❌");
@@ -47,7 +47,7 @@ const ManageUpcoming = () => {
     formData.append("image", image);
 
     try {
-      await axios.post("http://localhost:5000/api/upcoming/add", formData);
+      await axios.post("https://deorajpublicschool.onrender.com/upcoming/add", formData);
 
       toast.success("Event Added 🎉");
 
@@ -64,7 +64,7 @@ const ManageUpcoming = () => {
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/upcoming/delete/${id}`);
+      await axios.delete(`https://deorajpublicschool.onrender.com/upcoming/delete/${id}`);
       toast.success("Deleted 🗑️");
       fetchData();
     } catch {
@@ -173,7 +173,7 @@ const ManageUpcoming = () => {
                 {/* FIXED IMAGE */}
                 <div className="h-48 w-full overflow-hidden">
                   <img
-                    src={`http://localhost:5000/uploads/${ev.image}`}
+                    src={`https://deorajpublicschool.onrender.com/uploads/${ev.image}`}
                     className="h-full w-full object-cover group-hover:scale-110 transition duration-500"
                   />
                 </div>

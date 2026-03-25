@@ -12,7 +12,7 @@ const UpcomingEvents = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/api/upcoming/all");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/upcoming/all");
     setEvents(res.data);
   };
 
@@ -46,7 +46,7 @@ const UpcomingEvents = () => {
               {/* ✅ FIXED IMAGE (NO SHRINK) */}
               <div className="w-44 h-44 flex-shrink-0">
                 <img
-                  src={`http://localhost:5000/uploads/${event.image}`}
+                  src={`https://deorajpublicschool.onrender.com/uploads/${event.image}`}
                   className="w-full h-full object-cover"
                   alt=""
                 />

@@ -7,7 +7,7 @@ const Fee = () => {
   const [transportFees, setTransportFees] = useState([]);
 
   const fetchFees = async () => {
-    const res = await axios.get("http://localhost:5000/api/fees");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/fees");
 
     const classData = res.data.filter(f => f.type === "class");
     const transportData = res.data.filter(f => f.type === "transport");

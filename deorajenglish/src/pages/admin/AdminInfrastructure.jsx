@@ -13,7 +13,7 @@ const AdminInfrastructure = () => {
   const [message, setMessage] = useState("");
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/api/infrastructure");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/infrastructure");
     setData(res.data);
   };
 
@@ -32,7 +32,7 @@ const AdminInfrastructure = () => {
       formData.append("title", form.title);
       formData.append("desc", form.desc);
 
-      await axios.post("http://localhost:5000/api/infrastructure", formData);
+      await axios.post("https://deorajpublicschool.onrender.com/api/infrastructure", formData);
 
       setMessage("✅ Upload Successful!");
       setForm({ title: "", desc: "" });
@@ -46,7 +46,7 @@ const AdminInfrastructure = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/infrastructure/${id}`);
+    await axios.delete(`https://deorajpublicschool.onrender.com/api/infrastructure/${id}`);
     fetchData();
   };
 
@@ -108,7 +108,7 @@ const AdminInfrastructure = () => {
             className="bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <img
-              src={`http://localhost:5000/uploads/${item.image}`}
+              src={`https://deorajpublicschool.onrender.com/uploads/${item.image}`}
               className="h-40 w-full object-cover"
               alt="infrastructure"
             />

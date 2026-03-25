@@ -15,7 +15,7 @@ const AdminFee = () => {
 
   const fetchFees = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/fees");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/fees");
       setFees(res.data);
     } catch (err) {
       console.error(err);
@@ -32,7 +32,7 @@ const AdminFee = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("http://localhost:5000/api/fees", form);
+      await axios.post("https://deorajpublicschool.onrender.com/api/fees", form);
       setForm({ type: "class", name: "", fee: "" });
       fetchFees();
 
@@ -46,7 +46,7 @@ const AdminFee = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/fees/${id}`);
+      await axios.delete(`https://deorajpublicschool.onrender.com/api/fees/${id}`);
       fetchFees();
 
       setMessage("Fee deleted successfully 🗑️");

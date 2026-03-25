@@ -12,7 +12,7 @@ const Schoolimage = () => {
   }, []);
 
   const fetchImages = async () => {
-    const res = await axios.get("http://localhost:5000/api/gallery/all");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/gallery/all");
     setImages(res.data);
   };
 
@@ -29,7 +29,7 @@ const Schoolimage = () => {
           {images.map((img) => (
             <motion.div key={img._id} whileHover={{ scale: 1.05 }}>
               <img
-                src={`http://localhost:5000/uploads/${img.image}`}
+                src={`https://deorajpublicschool.onrender.com/uploads/${img.image}`}
                 className="rounded-xl h-[250px] w-full object-cover"
               />
             </motion.div>

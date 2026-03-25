@@ -22,7 +22,7 @@ const ManageUpdates = () => {
   };
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/api/updates/all");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/updates/all");
     setUpdates(res.data);
   };
 
@@ -39,10 +39,10 @@ const ManageUpdates = () => {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/api/updates/update/${editId}`, form);
+        await axios.put(`https://deorajpublicschool.onrender.com/api/updates/update/${editId}`, form);
         toast.success("Updated Successfully");
       } else {
-        await axios.post("http://localhost:5000/api/updates/add", form);
+        await axios.post("https://deorajpublicschool.onrender.com/api/updates/add", form);
         toast.success("Added Successfully");
       }
 
@@ -55,7 +55,7 @@ const ManageUpdates = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/updates/delete/${id}`);
+    await axios.delete(`https://deorajpublicschool.onrender.com/api/updates/delete/${id}`);
     toast("Deleted", { icon: "🗑️" });
     fetchData();
   };

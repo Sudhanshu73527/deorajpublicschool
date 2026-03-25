@@ -15,7 +15,7 @@ const AdminStaff = () => {
 
   const fetchStaff = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/staff");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/staff");
       setStaff(res.data);
     } catch (err) {
       console.error(err);
@@ -32,7 +32,7 @@ const AdminStaff = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("http://localhost:5000/api/staff", form);
+      await axios.post("https://deorajpublicschool.onrender.com/api/staff", form);
       setForm({ name: "", subject: "", experience: "" });
       fetchStaff();
 
@@ -49,7 +49,7 @@ const AdminStaff = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/staff/${id}`);
+      await axios.delete(`https://deorajpublicschool.onrender.com/api/staff/${id}`);
       fetchStaff();
 
       setMessage("Staff deleted successfully 🗑️");

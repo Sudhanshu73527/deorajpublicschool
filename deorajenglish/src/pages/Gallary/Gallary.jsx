@@ -6,7 +6,7 @@ const Gallary = () => {
   const [images, setImages] = useState([]);
 
   const fetchImages = async () => {
-    const res = await axios.get("http://localhost:5000/api/school-gallery");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/school-gallery");
     setImages(res.data);
   };
 
@@ -37,7 +37,7 @@ const Gallary = () => {
               className="relative group overflow-hidden rounded-2xl shadow-lg"
             >
               <img
-                src={`http://localhost:5000/uploads/${img.image}`}
+                src={`https://deorajpublicschool.onrender.com/uploads/${img.image}`}
                 alt={img.title}
                 className="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500"
               />

@@ -12,7 +12,7 @@ const ManageGallery = () => {
 
   // FETCH
   const fetchImages = async () => {
-    const res = await axios.get("http://localhost:5000/api/gallery/all");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/gallery/all");
     setImages(res.data);
   };
 
@@ -37,7 +37,7 @@ const ManageGallery = () => {
     try {
       setLoading(true);
       await axios.post(
-        "http://localhost:5000/api/gallery/upload",
+        "https://deorajpublicschool.onrender.com/api/gallery/upload",
         formData
       );
 
@@ -55,7 +55,7 @@ const ManageGallery = () => {
   // DELETE
   const handleDelete = async (id) => {
     await axios.delete(
-      `http://localhost:5000/api/gallery/delete/${id}`
+      `https://deorajpublicschool.onrender.com/api/gallery/delete/${id}`
     );
     toast("Deleted", { icon: "🗑️" });
     fetchImages();
@@ -133,7 +133,7 @@ const ManageGallery = () => {
               className="relative group rounded-2xl overflow-hidden shadow-lg"
             >
               <img
-                src={`http://localhost:5000/uploads/${img.image}`}
+                src={`https://deorajpublicschool.onrender.com/uploads/${img.image}`}
                 className="h-40 w-full object-cover"
               />
 

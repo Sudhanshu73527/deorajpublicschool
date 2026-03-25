@@ -6,7 +6,7 @@ const Ourinfra = () => {
   const [infraData, setInfraData] = useState([]);
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/api/infrastructure");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/infrastructure");
     setInfraData(res.data);
   };
 
@@ -34,7 +34,7 @@ const Ourinfra = () => {
               className="group relative rounded-3xl overflow-hidden shadow-xl"
             >
               <img
-                src={`http://localhost:5000/uploads/${item.image}`}
+                src={`https://deorajpublicschool.onrender.com/uploads/${item.image}`}
                 className="w-full h-[320px] object-cover group-hover:scale-110 transition"
               />
 

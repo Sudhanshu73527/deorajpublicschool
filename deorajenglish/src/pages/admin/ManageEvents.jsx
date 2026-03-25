@@ -13,7 +13,7 @@ const ManageEvents = () => {
   // FETCH EVENTS
   const fetchEvents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/events/all");
+      const res = await axios.get("https://deorajpublicschool.onrender.com/api/events/all");
       setEvents(res.data);
     } catch (err) {
       toast.error("Failed to load events ❌");
@@ -36,7 +36,7 @@ const ManageEvents = () => {
     formData.append("image", image);
 
     try {
-      await axios.post("http://localhost:5000/api/events/add", formData);
+      await axios.post("https://deorajpublicschool.onrender.com/api/events/add", formData);
 
       toast.success("Event Added Successfully 🎉");
 
@@ -52,7 +52,7 @@ const ManageEvents = () => {
   // DELETE EVENT
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/events/delete/${id}`);
+      await axios.delete(`https://deorajpublicschool.onrender.com/api/events/delete/${id}`);
       toast.success("Event Image Deleted 🗑️");
       fetchEvents();
     } catch (err) {
@@ -149,7 +149,7 @@ const ManageEvents = () => {
 
                 {/* IMAGE */}
                 <img
-                  src={`http://localhost:5000/uploads/${ev.image}`}
+                  src={`https://deorajpublicschool.onrender.com/uploads/${ev.image}`}
                   className="h-48 w-full object-cover group-hover:scale-110 transition duration-500"
                   alt=""
                 />

@@ -65,7 +65,7 @@ const UpdatesSection = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/api/updates/all");
+    const res = await axios.get("https://deorajpublicschool.onrender.com/api/updates/all");
 
     const data = res.data;
 
