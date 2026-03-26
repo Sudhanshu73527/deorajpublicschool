@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLaptop, FaUniversity, FaCheckCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const stepsOnline = [
   "Visit the official school website",
@@ -57,9 +58,11 @@ const Admissionprocess = () => {
               ))}
             </ul>
 
-            <button className="mt-8 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full transition">
+           <Link to={"/online-registration"}>
+            <button className="mt-8 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full transition cursor-pointer">
               Apply Online
             </button>
+            </Link>
           </motion.div>
 
           {/* Offline Admission */}
@@ -82,10 +85,12 @@ const Admissionprocess = () => {
                 </li>
               ))}
             </ul>
-
-            <button className="mt-8 w-full bg-gray-800 hover:bg-black text-white py-3 rounded-full transition">
-              Visit Campus
+          
+          <Link to={"/contact"}>
+            <button className="mt-8 w-full bg-gray-800 hover:bg-black text-white py-3 rounded-full transition cursor-pointer">
+              Contact Us
             </button>
+            </Link>
           </motion.div>
 
         </div>

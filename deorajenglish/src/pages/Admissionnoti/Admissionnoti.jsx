@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCalendarAlt, FaArrowRight } from "react-icons/fa";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Admissionnoti = () => {
   const [notifications, setNotifications] = useState([]);
@@ -53,9 +54,11 @@ const Admissionnoti = () => {
             </div>
 
             <div className="flex gap-4 flex-wrap">
-              <button className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-full shadow-md transition">
+            <Link to={"/online-registration"}>
+              <button className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-full shadow-md transition cursor-pointer">
                 Apply Now <FaArrowRight />
               </button>
+              </Link>
               <button className="text-gray-700 border-b-2 border-gray-300 hover:border-green-600 transition">Learn More</button>
             </div>
           </motion.div>

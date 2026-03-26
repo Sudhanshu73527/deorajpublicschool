@@ -74,7 +74,7 @@ const Navbar = () => {
             </span>
             <span className="flex items-center space-x-2">
               <FaEnvelope className="text-yellow-400" />
-              <span>deorajenglishpublicschool@.in</span>
+              <span>dpessikta0786@gmail.com</span>
             </span>
           </div>
 
@@ -118,7 +118,7 @@ const Navbar = () => {
               Deoraj Public English School
             </h1>
             <h2 className="text-xl font-bold text-purple-800">
-              Sikta, Lauriya-845553
+              Sikta, Lauriya-845453
             </h2>
           </div>
 

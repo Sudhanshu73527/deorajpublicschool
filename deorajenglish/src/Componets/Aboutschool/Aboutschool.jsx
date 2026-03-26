@@ -87,14 +87,14 @@ const Aboutschool = () => {
             </p>
 
             {/* BUTTON */}
-            <motion.button
+            {/* <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
               className="relative px-8 py-3 text-xs font-semibold tracking-[0.18em] uppercase text-[#0b1220] bg-amber-400 overflow-hidden group mx-auto lg:mx-0"
             >
               <span className="relative z-10">Explore Our Story</span>
               <span className="absolute inset-0 bg-amber-300 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-            </motion.button>
+            </motion.button> */}
 
           </motion.div>
 

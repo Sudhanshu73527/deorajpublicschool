@@ -20,7 +20,7 @@ const Contact = () => {
       return;
     }
 
-    const phoneNumber = "917352205506"; // 👈 apna WhatsApp number daal (91 + number)
+    const phoneNumber = "+918210263446"; // 👈 apna WhatsApp number daal (91 + number)
 
     const text = `Hello, my name is ${form.name}. ${form.message}`;
 
@@ -70,7 +70,7 @@ const Contact = () => {
           {/* Button */}
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg font-semibold transition"
+            className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg font-semibold transition cursor-pointer"
           >
             {/* <FaWhatsapp className="text-xl" /> */}
             Send Enquiry 
