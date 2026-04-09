@@ -13,7 +13,6 @@ import staffRoutes from "./routes/staffRoutes.js";
 import feeRoutes from "./routes/feeRoutes.js";
 import infrastructureRoutes from "./routes/infrastructureRoutes.js";
 
-
 dotenv.config();
 connectDB();
 
