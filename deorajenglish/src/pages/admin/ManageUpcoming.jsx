@@ -47,8 +47,7 @@ const ManageUpcoming = () => {
     formData.append("image", image);
 
     try {
-      await axios.post("https://deorajpublicschool.onrender.com/upcoming/add", formData);
-
+      await axios.post("https://deorajpublicschool.onrender.com/api/upcoming/add", formData);
       toast.success("Event Added 🎉");
 
       setForm({ title: "", date: "", description: "" });
@@ -64,7 +63,7 @@ const ManageUpcoming = () => {
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://deorajpublicschool.onrender.com/upcoming/delete/${id}`);
+      await axios.delete(`https://deorajpublicschool.onrender.com/api/upcoming/delete/${id}`);
       toast.success("Deleted 🗑️");
       fetchData();
     } catch {
@@ -81,7 +80,7 @@ const ManageUpcoming = () => {
       {/* HEADER */}
       <div className="mb-10">
         <h1 className="text-3xl font-bold">
-          📅 Manage Upcoming Events
+           Manage Upcoming Events
         </h1>
         <p className="text-gray-500">
           Add and manage upcoming school activities.
@@ -152,7 +151,7 @@ const ManageUpcoming = () => {
       {/* LIST */}
       <div>
         <h2 className="text-xl font-semibold mb-6">
-          📸 Upcoming Events List
+           Upcoming Events List
         </h2>
 
         {events.length === 0 ? (
@@ -173,7 +172,7 @@ const ManageUpcoming = () => {
                 {/* FIXED IMAGE */}
                 <div className="h-48 w-full overflow-hidden">
                   <img
-                    src={`https://deorajpublicschool.onrender.com/uploads/${ev.image}`}
+                    src={`https://deorajpublicschool.onrender.com/api/uploads/${ev.image}`}
                     className="h-full w-full object-cover group-hover:scale-110 transition duration-500"
                   />
                 </div>
