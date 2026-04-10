@@ -12,6 +12,7 @@ import schoolGalleryRoutes from "./routes/schoolGalleryRoutes.js";
 import staffRoutes from "./routes/staffRoutes.js";
 import feeRoutes from "./routes/feeRoutes.js";
 import infrastructureRoutes from "./routes/infrastructureRoutes.js";
+import studentRoutes from "./routes/studentRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -30,9 +31,8 @@ app.use("/api/school-gallery", schoolGalleryRoutes);
 app.use("/api/staff", staffRoutes);
 app.use("/api/fees", feeRoutes);
 app.use("/api/infrastructure", infrastructureRoutes);
+app.use("/api/students", studentRoutes);
 
-app.use("/uploads", express.static("uploads"));
-app.use("/uploads", express.static("uploads"));
 app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {

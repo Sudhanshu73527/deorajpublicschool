@@ -134,7 +134,7 @@ const ManageUpcoming = () => {
 
         <button
           onClick={handleAdd}
-          className="mt-4 bg-gradient-to-r from-green-600 to-emerald-400 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
+          className="mt-4 bg-gradient-to-r from-green-600 to-emerald-400 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition cursor-pointer"
         >
           Add Event
         </button>

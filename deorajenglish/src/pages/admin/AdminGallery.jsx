@@ -3,18 +3,22 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { UploadCloud, Trash2 } from "lucide-react";
 
+const API = "https://deorajpublicschool.onrender.com/api/school-gallery";
+
 const AdminGallery = () => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [title, setTitle] = useState("");
   const [images, setImages] = useState([]);
 
+  // ✅ FETCH
   const fetchImages = async () => {
     try {
-      const res = await axios.get("https://deorajpublicschool.onrender.com/api/school-gallery");
+      const res = await axios.get(API);
       setImages(res.data);
     } catch (err) {
-      console.error(err);
+      console.error("Fetch Error:", err);
+      alert("Failed to load images ❌");
     }
   };
 
@@ -22,34 +26,54 @@ const AdminGallery = () => {
     fetchImages();
   }, []);
 
+  // ✅ IMAGE SELECT
   const handleImage = (file) => {
+    if (!file) return;
     setImage(file);
     setPreview(URL.createObjectURL(file));
   };
 
+  // ✅ UPLOAD
   const handleUpload = async () => {
+    if (!image) {
+      alert("Please select image ❌");
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append("image", image);
       formData.append("title", title);
 
-      await axios.post("https://deorajpublicschool.onrender.com/api/school-gallery", formData);
+      await axios.post(API, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      alert("Uploaded Successfully ✅");
 
       setImage(null);
       setPreview(null);
       setTitle("");
       fetchImages();
     } catch (err) {
-      console.error(err);
+      console.error("Upload Error:", err);
+      alert("Upload failed ❌");
     }
   };
 
+  // ✅ DELETE
   const handleDelete = async (id) => {
+    if (!window.confirm("Delete this image?")) return;
+
     try {
-      await axios.delete(`https://deorajpublicschool.onrender.com/school-gallery/${id}`);
+      await axios.delete(`${API}/${id}`);
+      alert("Deleted ✅");
       fetchImages();
     } catch (err) {
-      console.error(err);
+      console.error("Delete Error:", err);
+      alert("Delete failed ❌");
     }
   };
 
@@ -57,31 +81,23 @@ const AdminGallery = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-white p-4 md:p-10">
       <div className="max-w-6xl mx-auto">
 
-        {/* HEADER */}
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-2xl md:text-4xl font-bold text-green-600 mb-6"
-        >
+        <h1 className="text-2xl md:text-4xl font-bold text-green-600 mb-6">
           School Gallery Management
-        </motion.h1>
+        </h1>
 
-        {/* UPLOAD CARD */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-lg p-4 md:p-6 mb-8"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* UPLOAD */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-4">
+
             <input
               type="text"
               placeholder="Enter Image Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="border rounded-lg p-3 focus:ring-2 focus:ring-green-400 outline-none"
+              className="border p-3 rounded-lg"
             />
 
-            <label className="flex items-center justify-center gap-2 cursor-pointer bg-gray-100 rounded-lg p-3 hover:bg-gray-200">
+            <label className="flex items-center justify-center gap-2 cursor-pointer bg-gray-100 rounded-lg p-3">
               <UploadCloud size={18} /> Select Image
               <input
                 type="file"
@@ -89,61 +105,46 @@ const AdminGallery = () => {
                 onChange={(e) => handleImage(e.target.files[0])}
               />
             </label>
+
           </div>
 
-          {/* PREVIEW + BUTTON */}
-          <div className="flex flex-col md:flex-row items-center gap-4 mt-4">
-            {preview && (
+          {preview && (
+            <img
+              src={preview}
+              className="mt-4 h-24 w-24 object-cover rounded"
+            />
+          )}
+
+          <button
+            onClick={handleUpload}
+            className="mt-4 bg-green-600 text-white px-6 py-2 rounded-lg"
+          >
+            Upload Image
+          </button>
+        </div>
+
+        {/* GALLERY */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {images.map((img) => (
+            <div key={img._id} className="bg-white rounded-xl shadow">
+
               <img
-                src={preview}
-                alt="preview"
-                className="h-24 w-24 object-cover rounded-lg shadow"
+                src={img.image}
+                className="h-40 w-full object-cover"
               />
-            )}
 
-            <button
-              onClick={handleUpload}
-              className="ml-auto bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow"
-            >
-              Upload Image
-            </button>
-          </div>
-        </motion.div>
+              <div className="p-3 flex justify-between items-center">
+                <p className="text-sm">{img.title || "Untitled"}</p>
 
-        {/* GALLERY GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {images.map((img, index) => (
-            <motion.div
-              key={img._id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.05 }}
-              className="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl"
-            >
-              <div className="relative">
-                <img
-                  src={`https://deorajpublicschool.onrender.com/uploads/${img.image}`}
-                  alt=""
-                  className="h-40 w-full object-cover group-hover:scale-105 transition"
-                />
-
-                {/* DELETE BUTTON OVERLAY */}
-                <button
-                  onClick={() => handleDelete(img._id)}
-                  className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition"
-                >
-                  <Trash2 size={16} />
+                <button onClick={() => handleDelete(img._id)}>
+                  <Trash2 size={16} color="red" />
                 </button>
               </div>
 
-              <div className="p-3">
-                <p className="text-sm font-medium text-gray-700 truncate">
-                  {img.title || "Untitled"}
-                </p>
-              </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+
       </div>
     </div>
   );

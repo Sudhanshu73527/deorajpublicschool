@@ -37,7 +37,7 @@ const Gallary = () => {
               className="relative group overflow-hidden rounded-2xl shadow-lg"
             >
               <img
-                src={`https://deorajpublicschool.onrender.com/uploads/${img.image}`}
+                src={img.image}
                 alt={img.title}
                 className="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500"
               />

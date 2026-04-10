@@ -1,21 +1,22 @@
 import jwt from "jsonwebtoken";
 
-const authMiddleware = (req, res, next) => {
+export const protect = (req, res, next) => {
+  let token = req.headers.authorization;
+
+  if (!token) {
+    return res.status(401).json({ msg: "No token ❌" });
+  }
+
+  // 🔥 IMPORTANT FIX
+  if (token.startsWith("Bearer ")) {
+    token = token.split(" ")[1];
+  }
+
   try {
-    const token = req.headers.authorization;
-
-    if (!token) {
-      return res.status(401).json({ msg: "No token" });
-    }
-
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    req.adminId = decoded.id;
-
+    req.admin = decoded;
     next();
   } catch (error) {
-    res.status(401).json({ msg: "Invalid token" });
+    return res.status(401).json({ msg: "Invalid token ❌" });
   }
 };
-
-export default authMiddleware;

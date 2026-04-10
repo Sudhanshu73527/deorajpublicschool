@@ -31,6 +31,10 @@ import Contact from "../pages/Contact/Contact";
 import AcademicCards from "../pages/AcademicCards/AcademicCards";
 import AdminInfrastructure from "../pages/admin/AdminInfrastructure";
 import Studentdetails from "../pages/Studentdetails/Studentdetails";
+import AdminFeePanel from "../pages/admin/AdminFeePanel";
+import StudentList from "../pages/StudentList";
+import StudentDetails from "../pages/StudentDetails";
+import AddStudent from "../pages/AddStudent";
 
 
 
@@ -48,7 +52,7 @@ const router = createBrowserRouter([
      {path: "/rte", element: <Rte/>},
      {path:"/admission-process", element: <Admissionprocess/>},
      {path:"/notification", element: <Admissionnoti/>},
-     {path:"/staff-details", element: <Staff/>},
+     {path:"/staff-details", element: <Staff/>}, 
      {path: "/fee", element: <Fee/>},
      {path: "/music", element: <Music/>},
      {path: "/dance", element: <Dance/>},
@@ -71,7 +75,11 @@ const router = createBrowserRouter([
      {path: "/admin/gallery", element: <AdminGallery/>},
      {path: "/admin/staff", element: <AdminStaff/>},
      {path: "/admin/fee", element: <AdminFee/>},
-     {path: "/admin/infra", element: <AdminInfrastructure/>}
+     {path: "/admin/infra", element: <AdminInfrastructure/>},
+     {path: "/admin-fee", element: <AdminFeePanel/>},
+     {path: "/list", element: <StudentList/>},
+     {path: "/student/:id", element: <StudentDetails/>},
+     {path: "/add", element: <AddStudent/>}
  ],
   },
 ]);
