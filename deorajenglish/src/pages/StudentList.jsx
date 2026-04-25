@@ -174,4 +174,4 @@ const StudentList = () => {
   );
 };
 
-export default StudentList;
+export default StudentList; 

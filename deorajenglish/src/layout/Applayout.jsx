@@ -5,9 +5,9 @@ import Footer from "../Componets/Footer/Footer";
 const AppLayout = () => {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
       <Outlet />
-      <Footer/>
+      {/* <Footer/> */}
      
          </>
   );

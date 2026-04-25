@@ -1,138 +1,228 @@
+// import React from "react";
+// import { motion } from "framer-motion";
+// import { Link } from "react-router-dom";
+
+// const Herosection = () => {
+//   return (
+//     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+//       {/* BACKGROUND IMAGE */}
+//       <img
+//         src="/dev1.png"
+//         className="absolute inset-0 w-full h-full object-cover"
+//       />
+
+//       {/* DARK OVERLAY */}
+//       <div className="absolute inset-0 bg-black/60"></div>
+
+//       {/* GRADIENT LIGHT */}
+//       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-500/20 blur-[150px] rounded-full"></div>
+//       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-400/20 blur-[150px] rounded-full"></div>
+
+//       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+//         {/* LEFT CONTENT */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 70 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.9 }}
+//           className="text-white text-center lg:text-left"
+//         >
+
+//           {/* BADGE */}
+//           <div className="inline-block bg-green-500/20 border border-green-400 px-4 py-1 rounded-full text-sm backdrop-blur-lg">
+//             Welcome to Deoraj Public English School
+//           </div>
+
+//           {/* TITLE */}
+//           <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 leading-tight">
+//             Building Bright
+//             <span className="block text-green-400">
+//               Futures Through Education
+//             </span>
+//           </h1>
+
+//           {/* DESCRIPTION */}
+//           <p className="mt-6 text-gray-200 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base">
+//             At Deoraj Public English School we nurture young minds with
+//             quality education, discipline, creativity and leadership skills
+//             to help every student achieve success in life.
+//           </p>
+
+//           {/* BUTTONS */}
+//           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
+          
+//           <Link to={"/online-registration"}>
+//             <button className="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-semibold shadow-lg transition hover:scale-105 cursor-pointer">
+//               Apply for Admission
+//             </button>
+//             </Link>
+
+//           <Link to={"/about-school"}>
+//             <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition cursor-pointer">
+//               Explore School
+//             </button>
+//             </Link>
+
+//           </div>
+
+//           {/* STATS */}
+//           <div className="grid grid-cols-3 gap-6 mt-12 max-w-sm mx-auto lg:mx-0">
+
+//             <div className="text-center">
+//               <h2 className="text-2xl sm:text-3xl font-bold text-green-400">
+//                 400+
+//               </h2>
+//               <p className="text-xs sm:text-sm text-gray-300">Students</p>
+//             </div>
+
+//             <div className="text-center">
+//               <h2 className="text-2xl sm:text-3xl font-bold text-green-400">
+//                 20+
+//               </h2>
+//               <p className="text-xs sm:text-sm text-gray-300">Teachers</p>
+//             </div>
+
+//             <div className="text-center">
+//               <h2 className="text-2xl sm:text-3xl font-bold text-green-400">
+//                 25+
+//               </h2>
+//               <p className="text-xs sm:text-sm text-gray-300">Classes</p>
+//             </div>
+
+//           </div>
+
+//         </motion.div>
+
+//         {/* RIGHT IMAGE */}
+//         <motion.div
+//           initial={{ opacity: 0, x: 80 }}
+//           animate={{ opacity: 1, x: 0 }}
+//           transition={{ duration: 0.9 }}
+//           className="hidden lg:flex justify-center"
+//         >
+
+//           <div className="relative">
+
+//             <img
+//               src="/dev2.png"
+//               className="rounded-3xl shadow-2xl w-[420px]"
+//             />
+
+//             {/* FLOAT CARD */}
+//             <div className="absolute -top-8 -left-10 bg-white p-4 rounded-xl shadow-xl w-44">
+//               <p className="text-sm font-semibold text-gray-700">
+//                 Smart Classrooms
+//               </p>
+//             </div>
+
+//             <div className="absolute bottom-10 -right-12 bg-white p-4 rounded-xl shadow-xl w-44">
+//               <p className="text-sm font-semibold text-gray-700">
+//                 Sports & Activities
+//               </p>
+//             </div>
+
+//           </div>
+
+//         </motion.div>
+
+//       </div>
+
+//     </section>
+//   );
+// };
+
+// export default Herosection;
+
+
+
+
+
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Herosection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-black text-white px-6">
 
-      {/* BACKGROUND IMAGE */}
-      <img
-        src="/dev1.png"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/60"></div>
-
-      {/* GRADIENT LIGHT */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-500/20 blur-[150px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-400/20 blur-[150px] rounded-full"></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-        {/* LEFT CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="text-white text-center lg:text-left"
-        >
-
-          {/* BADGE */}
-          <div className="inline-block bg-green-500/20 border border-green-400 px-4 py-1 rounded-full text-sm backdrop-blur-lg">
-            Welcome to Deoraj Public English School
-          </div>
-
-          {/* TITLE */}
-          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 leading-tight">
-            Building Bright
-            <span className="block text-green-400">
-              Futures Through Education
-            </span>
-          </h1>
-
-          {/* DESCRIPTION */}
-          <p className="mt-6 text-gray-200 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base">
-            At Deoraj Public English School we nurture young minds with
-            quality education, discipline, creativity and leadership skills
-            to help every student achieve success in life.
-          </p>
-
-          {/* BUTTONS */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-          
-          <Link to={"/online-registration"}>
-            <button className="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-semibold shadow-lg transition hover:scale-105 cursor-pointer">
-              Apply for Admission
-            </button>
-            </Link>
-
-          <Link to={"/about-school"}>
-            <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition cursor-pointer">
-              Explore School
-            </button>
-            </Link>
-
-          </div>
-
-          {/* STATS */}
-          <div className="grid grid-cols-3 gap-6 mt-12 max-w-sm mx-auto lg:mx-0">
-
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-green-400">
-                400+
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-300">Students</p>
-            </div>
-
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-green-400">
-                20+
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-300">Teachers</p>
-            </div>
-
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-green-400">
-                25+
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-300">Classes</p>
-            </div>
-
-          </div>
-
-        </motion.div>
-
-        {/* RIGHT IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-          className="hidden lg:flex justify-center"
-        >
-
-          <div className="relative">
-
-            <img
-              src="/dev2.png"
-              className="rounded-3xl shadow-2xl w-[420px]"
-            />
-
-            {/* FLOAT CARD */}
-            <div className="absolute -top-8 -left-10 bg-white p-4 rounded-xl shadow-xl w-44">
-              <p className="text-sm font-semibold text-gray-700">
-                Smart Classrooms
-              </p>
-            </div>
-
-            <div className="absolute bottom-10 -right-12 bg-white p-4 rounded-xl shadow-xl w-44">
-              <p className="text-sm font-semibold text-gray-700">
-                Sports & Activities
-              </p>
-            </div>
-
-          </div>
-
-        </motion.div>
-
+      {/* ALERT BAR */}
+      <div className="absolute top-0 w-full bg-red-600 text-white text-center py-2 text-sm font-semibold">
+        ⚠️ Reminder: Project completed 1.5 months ago. Kindly clear the pending payment. UPI: 7352205506
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 70 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        className="text-center max-w-2xl"
+      >
+
+        <div className="inline-block bg-red-500/20 border border-red-400 px-4 py-1 rounded-full text-sm mb-6">
+          Payment Pending Notice
+        </div>
+
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          Pending Payment
+          <span className="block text-red-400 mt-2">
+            Kindly Clear Dues
+          </span>
+        </h1>
+
+        <p className="mt-6 text-gray-300 text-base">
+          It has been more than 1.5 months since the project was successfully completed and delivered. 
+          Please clear the pending payment as soon as possible.
+        </p>
+
+        <div className="mt-6 text-xl font-semibold text-green-400">
+          UPI: 7352205506
+        </div>
+
+        <a href="upi://pay?pa=7352205506@upi" target="_blank" rel="noreferrer">
+          <button className="mt-8 bg-red-600 hover:bg-red-700 px-8 py-3 rounded-full font-semibold shadow-lg transition hover:scale-105">
+            Pay Now
+          </button>
+        </a>
+
+      </motion.div>
 
     </section>
   );
 };
 
 export default Herosection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
